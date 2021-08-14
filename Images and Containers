@@ -21,6 +21,31 @@ docker unpause ContainerID   # to unpause the processes in a running container
 docker kill ContainerID      # to kill the processes in a running container
 
 
+service docker stop           # to stop the Docker daemon process
+service docker start          # to start the Docker daemon process
 
 
+Ctrl+P+Q     # to exit out of the container. It ensures that the container still exists even after we exit from the container.
+If we had to exit out of the container directly, then the container itself would be destroyed.
+
+There is an easier way to attach to containers and exit them cleanly without the need of destroying them: NSENTER
+1) docker run --rm -v /usr/local/bin:/target jpetazzo/nsenter     # install nsenter image
+2) docker inspect image_ID | grep Pid                             # to get the Process ID via the Docker inspect command and filtering it via the Pid
+
+
+nsenter –m –u –n –p –i –t containerID command         #  NSENTER SYNTAX
+sudo nsenter –m –u –n –p –i –t 2978 /bin/bash         #  NSENTER EXAMPLE
+
+-u is used to mention the Uts namespace
+-m is used to mention the mount namespace
+-n is used to mention the network namespace
+-p is used to mention the process namespace
+-i s to make the container run in interactive mode.
+-t is used to connect the I/O streams of the container to the host OS.
+containerID − This is the ID of the container.
+command − This is the command to run within the container.
+
+CONSEQUENCE OF NSENTER:
+The prompt changes to the bash shell directly when we issue the nsenter command.
+We then issue the exit command. But you would notice that when we run the nsenter command, the container is still up and running.(NOT DESTROYED)
 
