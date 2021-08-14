@@ -1,0 +1,9 @@
+docker run hello-world          # to create container(an instance of an image)
+sudo docker run -it centos /bin/bash      # -it(interactive mode), /bin/bash( run the bash shell once CentOS is up and running)
+docker images                # to see the list of Docker images on the system
+docker rmi ImageID           # to remove Docker images on the system
+sudo docker images -q        # to return only the Image ID’s of the images
+docker inspect image_name    # to see the details of an image or container  (image_name = Repository)
+
+
+
