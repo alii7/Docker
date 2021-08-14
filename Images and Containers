@@ -4,6 +4,11 @@ docker images                # to see the list of Docker images on the system
 docker rmi ImageID           # to remove Docker images on the system
 sudo docker images -q        # to return only the Image ID’s of the images
 docker inspect image_name    # to see the details of an image or container  (image_name = Repository)
-
-
-
+docker ps                    # to list all of the containers on the machine (currently running)
+docker ps -a                 # to list all of the containers on the system
+docker history ImageID       # to see all the commands that were run with an image via a container
+docker history image_name    # to see all the commands that were run with an image via a container
+docker top ContainerID       # to see the top processes within a container
+docker stop ContainerID      # to stop a running container
+docker rm ContainerID        # to delete a container
+docker stats ContainerID     # to provide the statistics of a running container (CPU and memory utilization of the Container)
