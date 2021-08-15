@@ -49,3 +49,18 @@ CONSEQUENCE OF NSENTER:
 The prompt changes to the bash shell directly when we issue the nsenter command.
 We then issue the exit command. But you would notice that when we run the nsenter command, the container is still up and running.(NOT DESTROYED)
 
+FROM ubuntu                                 #
+MAINTAINER demousr@gmail.com                #
+                                            #
+RUN apt-get update                          #   DOCKERFILE EXAMPLE (Dockerfile)
+RUN apt-get install –y nginx                #
+CMD [“echo”,”Image created”]                #
+
+FROM            : which base image you want to base your image (we are creating an image from the ubuntu image)
+MAINTAINER      : the person who is going to maintain this image  (just mention the email ID)
+RUN             : to run instructions against the image
+CMD             : to display a message to the user
+
+
+
+
