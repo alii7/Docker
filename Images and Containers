@@ -84,3 +84,21 @@ docker run -p 8080:8080 -p 50000:50000 jenkins     # to run Jenkins and map the 
 50000 ==>  the Docker container port
 
 When you open the browser and navigate to the Docker host on port 8080, you will see Jenkins up and running.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+EXPOSE 80 :  to expose port 80 of Apache in the container to the Docker host
+CMD [“apache2ctl”, “-D”, “FOREGROUND”]   :   to run apache2 in the background
+
+CMD command param1          # to execute a command at runtime when the container is executed
+CMD [“echo” , “hello world”]      #  CMD EXAMPLE
+
+ENTRYPOINT command param1     # to execute commands at runtime for the container. But, this command is more flexible.
+
+ENV key value                 # to set environment variables in the container
+ENV var1=Tutorial var2=point  # ENVIRONMENT EXAMPLE
+
+WORKDIR dirname               # to set the working directory of the container
+WORKDIR /newtemp              # WORKDIR EXAMPLE
+
+
