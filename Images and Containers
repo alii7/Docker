@@ -62,5 +62,11 @@ RUN             : to run instructions against the image
 CMD             : to display a message to the user
 
 
+docker build  -t ImageName:TagName dir              # to build your own Docker images
+dir : The directory where the Docker File is present
 
+docker tag imageID Repositoryname                     # to tag an image to the relevant repository
+docker tag ab0c1d3744dd demousr/demorep:1.0           # TAG EXAMPLE
+docker push Repositoryname                            # to push images to the Docker Hub
+docker push demousr/demorep:1.0                       # PUSH EXAMPLE
 
