@@ -101,4 +101,17 @@ ENV var1=Tutorial var2=point  # ENVIRONMENT EXAMPLE
 WORKDIR dirname               # to set the working directory of the container
 WORKDIR /newtemp              # WORKDIR EXAMPLE
 
+Docker takes care of the networking aspects so that the containers can communicate with other containers and also with the Docker Host.
+ifconfig                  # to see the Docker Ethernet adapter
+docker network ls         # to list all the networks associated with Docker on the host
+docker network inspect network_name     # to output all the details about the network
+docker network inspect bridge           # EXAMPLE
+
+One can create a network in Docker before launching containers.
+
+docker network create –-driver drivername name      # to create network
+docker network create –-driver bridge new_nw        # EXAMPLE
+docker run –it –network=new_nw ubuntu:latest /bin/bash     # to attach the new network when launching the container
+
+
 
