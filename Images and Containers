@@ -70,3 +70,17 @@ docker tag ab0c1d3744dd demousr/demorep:1.0           # TAG EXAMPLE
 docker push Repositoryname                            # to push images to the Docker Hub
 docker push demousr/demorep:1.0                       # PUSH EXAMPLE
 
+
+
+In Docker, the containers themselves can have applications running on ports. 
+When you run a container, if you want to access the application in the container via a port number, you need to map the port number of the container to the port number of the Docker host.
+
+To understand what ports are exposed by the container, you should use the Docker inspect command to inspect the image.
+
+docker inspect Container/Image          # to return low-level information on the container or image  (in JSON format)
+docker run -p 8080:8080 -p 50000:50000 jenkins     # to run Jenkins and map the ports
+
+8080 ==>  the Docker host port
+50000 ==>  the Docker container port
+
+When you open the browser and navigate to the Docker host on port 8080, you will see Jenkins up and running.
