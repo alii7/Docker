@@ -101,6 +101,19 @@ ENV var1=Tutorial var2=point  # ENVIRONMENT EXAMPLE
 WORKDIR dirname               # to set the working directory of the container
 WORKDIR /newtemp              # WORKDIR EXAMPLE
 
+
+Container Linking allows multiple containers to link with each other. It is a better option than exposing ports.
+docker run --name=jenkinsa -d jenkins     # to specify a name to the container by using the –-name option (source container)
+docker run --name=reca --link=jenkinsa:alias-src -it ubuntu:latest /bin/bash     # to launch the destination container, but this time, we will link it with our source container
+docker attach reca     # to attach to the receiving container
+Then run the env command. You will notice new variables for linking with the source container.(ALIAS_SRC)
+
+
+
+
+
+
+
 Docker takes care of the networking aspects so that the containers can communicate with other containers and also with the Docker Host.
 ifconfig                  # to see the Docker Ethernet adapter
 docker network ls         # to list all the networks associated with Docker on the host
