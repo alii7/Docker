@@ -109,6 +109,30 @@ docker attach reca     # to attach to the receiving container
 Then run the env command. You will notice new variables for linking with the source container.(ALIAS_SRC)
 
 
+Docker has multiple storage drivers that allow one to work with the underlying storage devices :
+overlay or overlay2, aufs, brtfs, devicemanager, vfs,zfs
+
+AUFS :
+This is a stable driver; can be used for production-ready applications.
+It has good memory usage and is good for ensuring a smooth Docker experience for containers.
+There is a high-write activity associated with this driver which should be considered.
+It’s good for systems which are of Platform as a service type work.
+Device Manager :
+This is a stable driver; ensures a smooth Docker experience.
+This driver is good for testing applications in the lab.
+This driver is in line with the main Linux kernel functionality.
+Btrfs :
+This driver is in line with the main Linux kernel functionality.
+There is a high-write activity associated with this driver which should be considered.
+This driver is good for instances where you maintain multiple build pools.
+OverlayFS :
+This is a stable driver and it is in line with the main Linux kernel functionality.
+It has a good memory usage.
+This driver is good for testing applications in the lab.
+ZFS :
+This is a stable driver and it is good for testing applications in the lab.
+It’s good for systems which are of Platform-as-a-Service type work.
+
 
 
 
