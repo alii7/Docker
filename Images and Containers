@@ -142,6 +142,16 @@ They can be shared and also reused amongst many containers.
 Any changes to the volume itself can be made directly.
 They exist even after the container is deleted.
 
+sudo docker inspect Jenkins > tmp.txt             # When you view the text file using the more command, you will see an entry as JENKINS_HOME=/var/Jenkins_home.
+This is the mapping that is done within the container via the Jenkins image.
+docker run –d –v /home/demo:/var/jenkins_home –p 8080:8080 –p 50000:50000 jenkins    # to map the volume in the container to a local volume
+You need to specify the –v option when launching the container.
+
+sudo docker run –d --volume-driver=flocker –v /home/demo:/var/jenkins_home –p 8080:8080 –p 50000:50000 jenkins    # to change to the storage driver used for a container
+The –volume-driver option is used to specify another storage driver for the container.
+docker inspect 9bffb1bfebee > temp.txt          # to inspect volume driver
+If you browse through the text file and go to the line which says "VolumeDriver", you will see that the driver name has been changed.
+
 
 
 
