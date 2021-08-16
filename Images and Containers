@@ -180,3 +180,47 @@ The second node option is used to mention to run the node command in the node co
 
 This name (container name) will be different since the name of the containers keep on changing when you spin up a container.
 
+Docker has logging mechanisms to debug issues.
+There is logging at the daemon level and at the container level.
+
+Daemon Logging :
+Debug   : It details all the possible information handled by the daemon process.
+Info    : It details all the errors + Information handled by the daemon process.
+Errors  : It details all the errors handled by the daemon process.
+Fatal   : It only details all the fatal errors handled by the daemon process.
+
+How To Enable Logging :
+
+service docker stop           # to stop the docker daemon process
+dockerd –l debug &            # to start the docker daemon process by appending the –l parameter to specify the logging option
+dockerd is executable for the docker daemon process
+The –l option is used to specify the logging level.
+& is used to come back to the command prompt after the logging has been enabled
+Now, if you execute any Docker command such as docker images, the Debug information will also be sent to the console.
+
+Container Logging :
+
+docker logs containerID               # to see the logs of the container
+docker logs 6bfb1271fcdd              # DOCKER LOG EXAMPLE
+you can see that the commands executed in the container are shown in the logs (via ls command while in the container)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
