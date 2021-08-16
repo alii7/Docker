@@ -171,4 +171,9 @@ docker network create –-driver bridge new_nw        # EXAMPLE
 docker run –it –network=new_nw ubuntu:latest /bin/bash     # to attach the new network when launching the container
 
 
+sudo docker run –it –rm –name = HelloWorld –v “$PWD”:/usr/src/app –w /usr/src/app node node HelloWorld.js  #
+The –rm option is used to remove the container after it is run.
+The –w option is used to specify the working directory used by Node.js.
+The first node option is used to specify to run the node image.
+The second node option is used to mention to run the node command in the node container.
 
