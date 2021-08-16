@@ -152,8 +152,9 @@ The –volume-driver option is used to specify another storage driver for the co
 docker inspect 9bffb1bfebee > temp.txt          # to inspect volume driver
 If you browse through the text file and go to the line which says "VolumeDriver", you will see that the driver name has been changed.
 
-
-
+docker volume create –-name=volumename –-opt options          # to create volume
+sudo docker volume create –-name = demo –opt o = size = 100m            # VOLUME CREATE EXAMPLE
+docker volume ls                    # to list all the docker volumes on a docker host
 
 
 
