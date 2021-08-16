@@ -177,3 +177,6 @@ The –w option is used to specify the working directory used by Node.js.
 The first node option is used to specify to run the node image.
 The second node option is used to mention to run the node command in the node container.
 
+
+This name (container name) will be different since the name of the containers keep on changing when you spin up a container.
+
