@@ -133,6 +133,15 @@ ZFS :
 This is a stable driver and it is good for testing applications in the lab.
 It’s good for systems which are of Platform-as-a-Service type work.
 
+docker info           # to see the storage driver being used
+
+
+Data volume is a separate volume that can be shared across containers.
+They are initialized when the container is created.
+They can be shared and also reused amongst many containers.
+Any changes to the volume itself can be made directly.
+They exist even after the container is deleted.
+
 
 
 
