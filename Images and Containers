@@ -233,7 +233,7 @@ For the database, we are using the ports keyword to mention the ports that need 
 And then, we also specify the environment variables for mysql which are required to run mysql.
 
 ./docker-compose up                           # to  run our Docker Compose file
-
+docker-compose down                           # to shut our Docker compose file down
 
 docker system df                # to check the disk usage of docker
 docker system prune             # to remove unused data
